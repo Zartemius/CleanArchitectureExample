@@ -1,6 +1,8 @@
 package com.example.darte.cleanarchitectureexample.data
 
+import io.reactivex.Observable
+
 interface DeviceLocationSource {
 
-    fun getDeviceLocationKt():String
+    fun getDeviceLocationKt():Observable<String>
 }

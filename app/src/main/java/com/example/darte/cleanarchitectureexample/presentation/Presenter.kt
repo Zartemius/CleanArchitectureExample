@@ -1,6 +1,10 @@
 package com.example.darte.cleanarchitectureexample.presentation
 
+import android.util.Log
 import com.example.darte.cleanarchitectureexample.domain.GetLocationUseCase
+import io.reactivex.Scheduler
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 
 class Presenter(getLocationUseCase: GetLocationUseCase){
 
@@ -17,8 +21,12 @@ class Presenter(getLocationUseCase: GetLocationUseCase){
     }
 
     fun onButtonPressed(){
-        val location = mGetLocationUseCase.getDeviceLocation()
-        mView!!.showLocation(location)
+       val message =  mGetLocationUseCase.getDeviceLocation()
+        message.observeOn(AndroidSchedulers.mainThread())
+            .subscribe{ result ->
+                Log.i("EMITTER", "result _2"+ result)
+                mView!!.showLocation(result)
+            }
     }
 
     fun onDestroy(){
