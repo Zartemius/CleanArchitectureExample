@@ -3,7 +3,7 @@ package com.example.darte.cleanarchitectureexample.data
 import com.example.darte.cleanarchitectureexample.domain.models.Order
 import io.reactivex.Observable
 
-interface DeviceLocationSource {
+interface DataBase{
 
-    fun getDeviceLocationKt():Observable<String>
+    fun getOrder():Observable<Order>
 }

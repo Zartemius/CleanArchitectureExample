@@ -1,6 +1,7 @@
 package com.example.darte.cleanarchitectureexample.data
 
 import android.util.Log
+import com.example.darte.cleanarchitectureexample.ECDApplication
 import io.reactivex.Observable
 import io.reactivex.Scheduler
 import io.reactivex.schedulers.Schedulers
@@ -26,7 +27,7 @@ class LocationSource:DeviceLocationSource{
             for(i in list) {
                 Thread.sleep(1000)
                 emitter.onNext(i)
-                Log.i("EMITTER", "result"+ i)
+                Log.i("EMITTER", "result"+ ECDApplication.getAppContext())
             }
         }.subscribeOn(Schedulers.io())
     }
