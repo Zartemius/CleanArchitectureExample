@@ -19,19 +19,15 @@ class ECDApplication:Application() {
         }
     }*/
 
-
     override fun onCreate() {
         super.onCreate()
         // mAppContext = applicationContext
 
         ecdComponent = initDagger(this)
-
     }
 
     private fun initDagger(app: ECDApplication): AppComponent =
-
         DaggerAppComponent.builder()
             .appModule(AppModule(app))
             .build()
-
 }

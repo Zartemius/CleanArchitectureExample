@@ -1,7 +1,6 @@
 package com.example.darte.cleanarchitectureexample.data
 
-import com.example.darte.cleanarchitectureexample.domain.models.Order
-import com.google.firebase.firestore.QuerySnapshot
+import com.example.darte.cleanarchitectureexample.data.models.Order
 import io.reactivex.Observable
 
 interface LiveDataBaseRepository{

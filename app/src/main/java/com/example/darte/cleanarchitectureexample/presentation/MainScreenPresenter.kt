@@ -1,28 +1,22 @@
 package com.example.darte.cleanarchitectureexample.presentation
 
 import android.util.Log
-import com.example.darte.cleanarchitectureexample.domain.usecases.OrderDataUseCase
+import com.example.darte.cleanarchitectureexample.domain.usecases.GetLiveOrderDataUseCase
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import javax.inject.Inject
 
-class MainScreenPresenter @Inject constructor(orderDataUseCase: OrderDataUseCase){
-
-    val mOrderDataUseCase: OrderDataUseCase
+class MainScreenPresenter @Inject constructor(private val getLiveOrderDataUseCase: GetLiveOrderDataUseCase){
 
     var mView:MainView? = null
     lateinit var disposable:Disposable
-
-    init{
-        mOrderDataUseCase = orderDataUseCase
-    }
 
     fun onViewCreated(mainView:MainView){
         mView = mainView
     }
 
     fun onButtonPressed(){
-        val order = mOrderDataUseCase.getLiveOrderData()
+        val order = getLiveOrderDataUseCase.getLiveOrderData()
         disposable = order.observeOn(AndroidSchedulers.mainThread())
             .subscribe{result ->
                 Log.i("ORDER_EMITTER", "result "+ result.description)

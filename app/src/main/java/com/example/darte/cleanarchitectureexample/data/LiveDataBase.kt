@@ -1,13 +1,11 @@
 package com.example.darte.cleanarchitectureexample.data
 
-import android.util.Log
-import com.example.darte.cleanarchitectureexample.domain.models.Order
+import com.example.darte.cleanarchitectureexample.data.models.Order
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreSettings
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
-import javax.inject.Inject
 import kotlin.collections.ArrayList
 
 class LiveDataBase:LiveDataBaseRepository {
