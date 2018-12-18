@@ -1,4 +1,4 @@
-package com.example.darte.cleanarchitectureexample.presentation
+package com.example.darte.cleanarchitectureexample.presentation.mainscreen
 
 import android.util.Log
 import com.example.darte.cleanarchitectureexample.domain.usecases.GetLiveOrderDataUseCase
@@ -8,11 +8,11 @@ import javax.inject.Inject
 
 class MainScreenPresenter @Inject constructor(private val getLiveOrderDataUseCase: GetLiveOrderDataUseCase){
 
-    var mView:MainView? = null
+    private var mScreenView: MainScreenView? = null
     lateinit var disposable:Disposable
 
-    fun onViewCreated(mainView:MainView){
-        mView = mainView
+    fun onViewCreated(mainScreenView: MainScreenView){
+        mScreenView = mainScreenView
     }
 
     fun onButtonPressed(){
@@ -20,12 +20,12 @@ class MainScreenPresenter @Inject constructor(private val getLiveOrderDataUseCas
         disposable = order.observeOn(AndroidSchedulers.mainThread())
             .subscribe{result ->
                 Log.i("ORDER_EMITTER", "result "+ result.description)
-                mView!!.showLocation(result.description!!)
+                mScreenView!!.showLocation(result.description!!)
             }
     }
 
     fun onDestroy(){
-        mView = null
+        mScreenView = null
         disposable.dispose()
     }
 }

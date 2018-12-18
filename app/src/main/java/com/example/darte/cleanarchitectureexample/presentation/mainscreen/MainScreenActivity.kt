@@ -1,4 +1,4 @@
-package com.example.darte.cleanarchitectureexample.presentation
+package com.example.darte.cleanarchitectureexample.presentation.mainscreen
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -7,9 +7,9 @@ import com.example.darte.cleanarchitectureexample.R
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
-class MainScreen : AppCompatActivity(),MainView {
+class MainScreenActivity : AppCompatActivity(), MainScreenView {
 
-    @Inject lateinit var mMainScreenPresenter:MainScreenPresenter
+    @Inject lateinit var mMainScreenPresenter: MainScreenPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

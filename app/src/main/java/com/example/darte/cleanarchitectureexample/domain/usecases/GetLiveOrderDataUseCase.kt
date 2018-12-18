@@ -1,8 +1,8 @@
 package com.example.darte.cleanarchitectureexample.domain.usecases
 
-import com.example.darte.cleanarchitectureexample.data.LiveDataBaseRepository
+import com.example.darte.cleanarchitectureexample.data.livedatabase.LiveDataBaseRepository
 import com.example.darte.cleanarchitectureexample.domain.mappers.OrderMapper
-import com.example.darte.cleanarchitectureexample.data.models.Order
+import com.example.darte.cleanarchitectureexample.domain.models.Order
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import javax.inject.Inject

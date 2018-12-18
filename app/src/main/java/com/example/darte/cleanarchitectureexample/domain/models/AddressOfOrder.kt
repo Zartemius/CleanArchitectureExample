@@ -1,4 +1,4 @@
-package com.example.darte.cleanarchitectureexample.data.models
+package com.example.darte.cleanarchitectureexample.domain.models
 
 class AddressOfOrder {
     class AddressOfOrder {

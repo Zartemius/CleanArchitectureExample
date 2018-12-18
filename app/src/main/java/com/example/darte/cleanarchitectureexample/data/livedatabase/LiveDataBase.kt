@@ -1,6 +1,6 @@
-package com.example.darte.cleanarchitectureexample.data
+package com.example.darte.cleanarchitectureexample.data.livedatabase
 
-import com.example.darte.cleanarchitectureexample.data.models.Order
+import com.example.darte.cleanarchitectureexample.domain.models.Order
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreSettings
@@ -8,13 +8,11 @@ import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 import kotlin.collections.ArrayList
 
-class LiveDataBase:LiveDataBaseRepository {
+class LiveDataBase: LiveDataBaseRepository {
 
     private val collectionPath = "orders"
     private val field = "userId"
     private val fieldValue = "BqUbmkLdd8M24VQ6VaKibzZD1ZJ2"
-
-
 
     private val ordersCollection: CollectionReference = getInstanceOfFireStoreDb()
         .collection(collectionPath)

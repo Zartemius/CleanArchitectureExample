@@ -1,6 +1,6 @@
 package com.example.darte.cleanarchitectureexample.dagger
 
-import com.example.darte.cleanarchitectureexample.data.LiveDataBase
+import com.example.darte.cleanarchitectureexample.data.livedatabase.LiveDataBase
 import com.example.darte.cleanarchitectureexample.domain.usecases.GetLiveOrderDataUseCase
 import dagger.Module
 import dagger.Provides
@@ -11,7 +11,8 @@ class LiveDataBaseModule {
 
     @Provides
     @Singleton
-    fun provideLiveDataBase():LiveDataBase = LiveDataBase()
+    fun provideLiveDataBase(): LiveDataBase =
+        LiveDataBase()
 
     @Provides
     @Singleton

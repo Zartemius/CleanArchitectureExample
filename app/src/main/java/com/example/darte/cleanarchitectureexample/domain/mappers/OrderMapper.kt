@@ -1,6 +1,6 @@
 package com.example.darte.cleanarchitectureexample.domain.mappers
 
-import com.example.darte.cleanarchitectureexample.data.models.Order
+import com.example.darte.cleanarchitectureexample.domain.models.Order
 
 class OrderMapper{
 
