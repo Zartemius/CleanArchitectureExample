@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.example.darte.cleanarchitectureexample.ECDApplication
 import com.example.darte.cleanarchitectureexample.R
 import kotlinx.android.synthetic.main.activity_main.*
+import ru.terrakok.cicerone.Router
 import javax.inject.Inject
 
 class MainScreenActivity : AppCompatActivity(), MainScreenView {
