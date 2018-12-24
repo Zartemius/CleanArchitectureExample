@@ -38,17 +38,8 @@ class LiveDataBase: LiveDataBaseRepository {
                         for (doc in querySnapshot) {
                             orders.add(doc.toObject(Order::class.java))
                         }
-
                         emitter.onNext(orders)
                     }
-
-                           /* order.orderId = doc.id
-                            Log.i("ID_IN_LISTENER", "order_id " + order.orderId)
-                            Log.i("ID_IN_LISTENER", "description " + order.description)
-                            if (order.relatedReportsIds != null) {
-                                order.relatedReportsIds = doc.get("relatedReportsIds") as ArrayList<String>
-                            }
-                            orders.add(order)*/
                 }
 
         }.subscribeOn(Schedulers.io())

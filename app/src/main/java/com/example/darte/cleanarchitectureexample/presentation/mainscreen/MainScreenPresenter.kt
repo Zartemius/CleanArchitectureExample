@@ -11,8 +11,13 @@ class MainScreenPresenter @Inject constructor(private val getLiveOrderDataUseCas
     private var mScreenView: MainScreenView? = null
     lateinit var disposable:Disposable
 
-    fun onViewCreated(mainScreenView: MainScreenView){
+    fun subscribe(mainScreenView: MainScreenView){
         mScreenView = mainScreenView
+    }
+
+    fun unsubscribe(){
+        mScreenView = null
+        disposable.dispose()
     }
 
     fun onButtonPressed(){
@@ -22,10 +27,5 @@ class MainScreenPresenter @Inject constructor(private val getLiveOrderDataUseCas
                 Log.i("ORDER_EMITTER", "result "+ result.description)
                 mScreenView!!.showLocation(result.description!!)
             }
-    }
-
-    fun onDestroy(){
-        mScreenView = null
-        disposable.dispose()
     }
 }

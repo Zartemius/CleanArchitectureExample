@@ -9,9 +9,6 @@ import javax.inject.Inject
 
 class GetLiveOrderDataUseCase @Inject constructor(private val liveDataBaseRepository: LiveDataBaseRepository){
 
-
-
-
     //lateinit var mLiveDataBaseRepository:LiveDataBaseRepository
 
     /*init{

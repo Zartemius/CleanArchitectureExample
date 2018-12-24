@@ -4,10 +4,9 @@ import com.example.darte.cleanarchitectureexample.domain.usecases.CheckAuthState
 import com.example.darte.cleanarchitectureexample.domain.usecases.GetLiveOrderDataUseCase
 import com.example.darte.cleanarchitectureexample.presentation.mainscreen.MainScreenPresenter
 import com.example.darte.cleanarchitectureexample.presentation.splashscreen.SplashScreenPresenter
-import com.example.darte.cleanarchitectureexample.presentation.splashscreen.SplashScreenRouter
+import com.example.darte.cleanarchitectureexample.router.SplashScreenRouter
 import dagger.Module
 import dagger.Provides
-import ru.terrakok.cicerone.Router
 import javax.inject.Singleton
 
 @Module
@@ -20,6 +19,6 @@ class PresenterModule {
 
     @Provides
     @Singleton
-    fun provideSplashScreenPresenter(checkAuthStateUseCase:CheckAuthStateUseCase,router:SplashScreenRouter):SplashScreenPresenter =
+    fun provideSplashScreenPresenter(checkAuthStateUseCase:CheckAuthStateUseCase,router: SplashScreenRouter):SplashScreenPresenter =
         SplashScreenPresenter(checkAuthStateUseCase,router)
 }

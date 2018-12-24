@@ -5,7 +5,6 @@ import android.os.Bundle
 import com.example.darte.cleanarchitectureexample.ECDApplication
 import com.example.darte.cleanarchitectureexample.R
 import kotlinx.android.synthetic.main.activity_main.*
-import ru.terrakok.cicerone.Router
 import javax.inject.Inject
 
 class MainScreenActivity : AppCompatActivity(), MainScreenView {
@@ -18,19 +17,23 @@ class MainScreenActivity : AppCompatActivity(), MainScreenView {
 
         (application as ECDApplication).ecdComponent.inject(this)
 
-        mMainScreenPresenter.onViewCreated(this)
-
         setLocationButton.setOnClickListener {
             mMainScreenPresenter.onButtonPressed()
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mMainScreenPresenter.subscribe(this)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        mMainScreenPresenter.unsubscribe()
     }
 
     override fun showLocation(location: String) {
         locationMessage.text = location
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        mMainScreenPresenter.onDestroy()
-    }
 }

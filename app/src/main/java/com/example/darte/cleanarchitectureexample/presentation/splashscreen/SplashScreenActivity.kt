@@ -12,28 +12,32 @@ import javax.inject.Inject
 class SplashScreenActivity : AppCompatActivity(),SplashView {
 
     @Inject lateinit var mSplashScreenPresenter:SplashScreenPresenter
-    lateinit var mNavigationHolder:NavigatorHolder
-    val navigator:Navigator = SupportAppNavigator(this,-1)
+    private val navigator:Navigator = SupportAppNavigator(this,-1)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
         (application as ECDApplication).ecdComponent.inject(this)
-
-        mSplashScreenPresenter.onViewCreated(this)
-        mSplashScreenPresenter.onAuthButtonWasClicked()
     }
 
     override fun onResume() {
         super.onResume()
-        mNavigationHolder.setNavigator(navigator)
+        mSplashScreenPresenter.subscribe(this)
+        mSplashScreenPresenter.setNavigator(navigator)
+        mSplashScreenPresenter.onAuthButtonWasClicked()
 
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        mSplashScreenPresenter.onDestroy()
-        mNavigationHolder.removeNavigator()
+    override fun onPause() {
+        super.onPause()
+        mSplashScreenPresenter.unsubscribe()
+        mSplashScreenPresenter.removeNavigator()
+
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        mSplashScreenPresenter.onBackPressed()
     }
 }
