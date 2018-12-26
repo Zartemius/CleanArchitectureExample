@@ -1,13 +1,13 @@
-package com.example.darte.cleanarchitectureexample.domain.usecases
+package com.example.darte.cleanarchitectureexample.domain.usecases.order
 
-import com.example.darte.cleanarchitectureexample.data.livedatabase.LiveDataBaseRepository
+import com.example.darte.cleanarchitectureexample.data.database.LiveDataBaseRepository
 import com.example.darte.cleanarchitectureexample.domain.mappers.OrderMapper
 import com.example.darte.cleanarchitectureexample.domain.models.Order
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import javax.inject.Inject
 
-class GetLiveOrderDataUseCase @Inject constructor(private val liveDataBaseRepository: LiveDataBaseRepository){
+class GettingOrderLiveDataUseCase @Inject constructor(private val liveDataBaseRepository: LiveDataBaseRepository){
 
     //lateinit var mLiveDataBaseRepository:LiveDataBaseRepository
 

@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">CleanArchitectureExample</string>
+    <string name="enter_name">"Введите имя"</string>
+    <string name="enter_password">"Введите пароль"</string>
+    <string name="enter_email">Введите электронный адрес</string>
+    <string name="wrong_email_data_format">Неверный формат электронной почты</string>
+    <string name="wrong_name_data_format">Неверный формат имени</string>
+    <string name="error_of_registration">Ошибка регистрации</string>
+    <string name="password_is_too_short">Пароль слишком короткий. Введите минимум 6 знаков!</string>
+    <string name="repeat_attempt">Повторите попытку</string>
+    <string name="enter_surname">"Введите фамилию"</string>
+    <string name="enter_patronymic">"Введите отчество"</string>
+    <string name="enter_phone_number">Введите номер телефона</string>
+    <string name="wrong_surname_data_format">Неверный формат фамилии</string>
+    <string name="wrong_middle_name_data_format">Неверный формат отчества</string>
+    <string name="myAlphaNumeric">йцукенгшщзхъфывапролджэячсмитьбю ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ.,()!?:;-+*!_@
+        abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789
+    </string>
+    <string name="email">Электронный адрес</string>
+    <string name="password">Пароль</string>
+    <string name="confirm_password">Подтвердите пароль</string>
+    <string name="Fio">Фамилия</string>
+    <string name="fio">Ф.И.О.</string>
+    <string name="name">Имя</string>
+    <string name="middle_name">Отчество</string>
+    <string name="number">Номер</string>
+    <string name="passwords_do_not_match">Пароли на совпадают</string>
+
+
 </resources>

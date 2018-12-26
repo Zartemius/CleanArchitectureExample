@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#1f2526</color>
+    <color name="colorPrimaryDark">#1f2526</color>
+    <color name="colorAccent">#2086d4</color>
+    <color name="colorCompl">#191e1e</color>
+    <color name="bottom_menu_background">#192b39</color>
+    <color name="buttom_grea">#716D7D</color>
+    <color name="background_item">#1a192b39</color>
+    <color name="white">#ffffff</color>
+    <color name="background_menu">#cc192b39</color>
+    <color name="color_Setting">#e8192b39</color>
+    <color name="color_info">#b4192b39</color>
+    <color name="massag_color">#ececec</color>
+    <color name="abort_color">#991304</color>
+    <color name="abort_rep_color">#DF4E00</color>
+    <color name="statistics_text">#ffffff</color>
+    <color name="modification_color">#DF6A00</color>
+    <color name="color_cd">#7ab701</color>
+    <color name="white_text">#beffffff</color>
+    <color name="white_phone">#50ffffff</color>
+    <color name="gray">#cacaca</color>
+    <color name="color_sd">#1e7dc6</color>
+    <color name="color_mod">#1b76bb</color>
+    <color name="color_otm">#1867a5</color>
+    <color name="color_otk">#1a6fb1</color>
 </resources>

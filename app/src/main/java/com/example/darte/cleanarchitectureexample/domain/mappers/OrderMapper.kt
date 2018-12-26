@@ -6,7 +6,6 @@ class OrderMapper{
 
     companion object {
         fun getActualOrder(orders:ArrayList<Order>):Order{
-
             var order = Order()
             order.description = ""
 

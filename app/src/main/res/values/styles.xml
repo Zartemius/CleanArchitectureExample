@@ -1,11 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorForeground">@color/bottom_menu_background</item>
+        <item name="android:navigationBarColor">@color/colorPrimary</item>
+
+        <item name="android:colorBackground">@color/white</item>
+    </style>
+    <style name="AppThemeTranslucentStatus" parent="AppTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorForeground">@color/bottom_menu_background</item>
+        <item name="android:navigationBarColor">@color/colorPrimary</item>
+        <item name="android:windowTranslucentStatus">true</item>
+
+
+        <item name="android:colorBackground">@color/white</item>
     </style>
 
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/colorPrimary</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Button" parent="Widget.AppCompat.Button">
+        <item name="colorButtonNormal">@color/bottom_menu_background</item>
+        <item name="colorAccent">@color/bottom_menu_background</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="ButtonAbort" parent="Widget.AppCompat.Button">
+        <item name="colorButtonNormal">@color/abort_color</item>
+        <item name="colorAccent">@color/abort_color</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
 </resources>

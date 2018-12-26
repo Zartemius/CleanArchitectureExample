@@ -24,10 +24,24 @@ class AuthProcessorImpl:AuthProcessor{
             fireBaseAuthInstance.createUserWithEmailAndPassword(email,password)
                 .addOnCompleteListener{ task ->
                     if (!task.isSuccessful) {
-                        //continuation.resume(false)
+                        emitter.onSuccess(false)
                     } else {
+                        emitter.onSuccess(true)
                         //addDataToFireBaseDataBase(email,name,surname,patronymic,phoneNumber)
-                        //continuation.resume(true)
+                    }
+                }
+        }
+    }
+
+    override fun logInUserAsync(email: String, password: String):Single<Boolean> {
+        return Single.create { emitter ->
+            val fireBaseAuthInstance = getFireBaseAuthInstance()
+            fireBaseAuthInstance.signInWithEmailAndPassword(email,password)
+                .addOnCompleteListener { task->
+                    if(task.isSuccessful){
+                        emitter.onSuccess(true)
+                    }else{
+                        emitter.onSuccess(false)
                     }
                 }
         }

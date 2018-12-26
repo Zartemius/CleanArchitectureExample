@@ -14,7 +14,7 @@ class SplashScreenRouter @Inject constructor(private val mRouter:Router,
     }
 
     override fun navigateForward() {
-        mRouter.navigateTo(Screens.Companion.MainScreen())
+        mRouter.navigateTo(Screens.Companion.SigningUpScreen())
     }
 
     override fun setNavigator(navigator:Navigator) {

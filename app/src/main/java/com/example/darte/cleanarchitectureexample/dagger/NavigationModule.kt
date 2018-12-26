@@ -1,5 +1,6 @@
 package com.example.darte.cleanarchitectureexample.dagger
 
+import com.example.darte.cleanarchitectureexample.router.RegistrationRouter
 import com.example.darte.cleanarchitectureexample.router.SplashScreenRouter
 import dagger.Module
 import dagger.Provides
@@ -25,4 +26,9 @@ class NavigationModule {
     @Singleton
     fun provideSplashScreenRouter(router:Router,navigatorHolder: NavigatorHolder) =
         SplashScreenRouter(router,navigatorHolder)
+
+    @Provides
+    @Singleton
+    fun provideRegistrationRouter(router:Router, navigatorHolder: NavigatorHolder) =
+            RegistrationRouter(router,navigatorHolder)
 }

@@ -5,15 +5,15 @@ import ru.terrakok.cicerone.NavigatorHolder
 import ru.terrakok.cicerone.Router
 import javax.inject.Inject
 
-class SigningUpRouter @Inject constructor(private val mRouter: Router,
-                                         private val mNavigatorHolder: NavigatorHolder):SmartRouter {
+class RegistrationRouter @Inject constructor(private val mRouter: Router,
+                                             private val mNavigatorHolder: NavigatorHolder):SmartRouter {
 
     override fun navigateBack() {
         mRouter.exit()
     }
 
     override fun navigateForward() {
-        mRouter.navigateTo(Screens.Companion.SplashScreen())
+        mRouter.navigateTo(Screens.Companion.MainScreen())
     }
 
     override fun setNavigator(navigator:Navigator) {

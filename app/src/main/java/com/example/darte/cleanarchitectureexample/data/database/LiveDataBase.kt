@@ -1,9 +1,9 @@
-package com.example.darte.cleanarchitectureexample.data.livedatabase
+package com.example.darte.cleanarchitectureexample.data.database
 
+import com.example.darte.cleanarchitectureexample.data.FireStoreDataBase
 import com.example.darte.cleanarchitectureexample.domain.models.Order
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.FirebaseFirestoreSettings
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 import kotlin.collections.ArrayList
@@ -18,13 +18,7 @@ class LiveDataBase: LiveDataBaseRepository {
         .collection(collectionPath)
 
     private fun getInstanceOfFireStoreDb(): FirebaseFirestore {
-        val fireStoreDataBase = FirebaseFirestore.getInstance()
-        val settings = FirebaseFirestoreSettings.Builder()
-            .setTimestampsInSnapshotsEnabled(true)
-            .build()
-
-        fireStoreDataBase.firestoreSettings = settings
-        return fireStoreDataBase
+       return FireStoreDataBase.getInstance()
     }
 
     override fun getOrder(): Observable<ArrayList<Order>> {

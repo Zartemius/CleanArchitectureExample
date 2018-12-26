@@ -1,7 +1,7 @@
 package com.example.darte.cleanarchitectureexample.dagger
 
-import com.example.darte.cleanarchitectureexample.data.livedatabase.LiveDataBase
-import com.example.darte.cleanarchitectureexample.domain.usecases.GetLiveOrderDataUseCase
+import com.example.darte.cleanarchitectureexample.data.database.LiveDataBase
+import com.example.darte.cleanarchitectureexample.domain.usecases.order.GettingOrderLiveDataUseCase
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -16,6 +16,6 @@ class LiveDataBaseModule {
 
     @Provides
     @Singleton
-    fun provideOrderDataUseCase(liveDataBase: LiveDataBase):GetLiveOrderDataUseCase
-            = GetLiveOrderDataUseCase(liveDataBase)
+    fun provideOrderDataUseCase(liveDataBase: LiveDataBase): GettingOrderLiveDataUseCase
+            = GettingOrderLiveDataUseCase(liveDataBase)
 }

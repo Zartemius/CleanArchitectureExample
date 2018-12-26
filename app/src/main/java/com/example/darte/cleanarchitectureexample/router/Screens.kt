@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import com.example.darte.cleanarchitectureexample.presentation.mainscreen.MainScreenActivity
+import com.example.darte.cleanarchitectureexample.presentation.registrationscreen.RegistrationActivity
 import com.example.darte.cleanarchitectureexample.presentation.splashscreen.SplashScreenActivity
 import ru.terrakok.cicerone.android.support.SupportAppScreen
 
@@ -20,6 +21,12 @@ class Screens {
         class SplashScreen:SupportAppScreen(){
             override fun getActivityIntent(context: Context?): Intent {
                 return Intent(context,SplashScreenActivity::class.java)
+            }
+        }
+
+        class SigningUpScreen:SupportAppScreen(){
+            override fun getActivityIntent(context: Context?): Intent {
+                return Intent(context,RegistrationActivity::class.java)
             }
         }
     }
